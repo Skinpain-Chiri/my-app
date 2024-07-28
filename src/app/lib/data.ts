@@ -12,7 +12,7 @@ export async function getPerfumes() {
             }
         });
     } catch (error: any) {
-        console.log(error.message);
+        console.log(error);
         return [];
     }
 }
