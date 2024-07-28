@@ -13,3 +13,16 @@
     text-wrap: balance;
   }
 }
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton {
+  @apply bg-gray-300 animate-pulse;
+}

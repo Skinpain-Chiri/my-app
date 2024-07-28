@@ -1,4 +1,6 @@
 import PerfumeCards from "../ui/home/PerfumeCard";
+import SkeletonCard from "../ui/home/CardSkeleton";
+import { Suspense } from "react";
 
 export default async function Page() {
     return (
@@ -10,7 +12,9 @@ export default async function Page() {
             Never give out the same impression again 
         </p>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
-            <PerfumeCards />
+            <Suspense fallback={<SkeletonCard />}>
+                <PerfumeCards />
+            </Suspense>
         </div>
         </>
     );

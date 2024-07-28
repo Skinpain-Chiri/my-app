@@ -9,7 +9,6 @@ export async function getPerfumes() {
             prize: perfume.prize.toFixed(2)
         }
     });
-
     await Promise.all(perfumes);
     return perfumes;
 }
