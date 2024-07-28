@@ -3,7 +3,7 @@ import { getPerfumes } from "@/app/lib/data";
 
 export default async function PerfumeCards() {
     const perfumes = await getPerfumes();
-    
+
     return perfumes.map((perfume) => (
         <div key={perfume.name} className='bg-white shadow-md rounded-lg overflow-hidden'>
             <Image 
