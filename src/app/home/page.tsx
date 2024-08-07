@@ -1,5 +1,6 @@
 import PerfumeCards from "../ui/home/PerfumeCard";
-import SkeletonCard from "../ui/home/CardSkeleton";
+import Search from "../ui/home/Search";
+import { SkeletonCard } from "../ui/home/Skeletons";
 import { Suspense } from "react";
 
 export default async function Page() {
@@ -11,6 +12,7 @@ export default async function Page() {
         <p className='mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 '>
             Never give out the same impression again 
         </p>
+        <Search placeholder="Search for perfumes" />
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
             <Suspense fallback={<SkeletonCard />}>
                 <PerfumeCards />
