@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { getPerfumes } from "@/app/lib/data";
 
-export default async function PerfumeCards() {
-    const perfumes = await getPerfumes();
+export default async function PerfumeCards({ search }:{ search: string }) {
+    const perfumes = await getPerfumes(search);
 
     return perfumes.map((perfume) => (
         <div key={perfume.name} className='bg-white shadow-md rounded-lg overflow-hidden'>
