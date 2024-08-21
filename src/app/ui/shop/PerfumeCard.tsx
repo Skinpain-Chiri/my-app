@@ -1,11 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import { getPerfumes } from "@/app/lib/data";
 
 export default async function PerfumeCards({ search }:{ search: string }) {
     const perfumes = await getPerfumes(search);
 
     return perfumes.map((perfume) => (
-        <div key={perfume.name} className='bg-white shadow-md rounded-lg overflow-hidden'>
+        <Link key={perfume.id} href={`/${perfume.id}/`}>
+        <div  className='bg-white shadow-md rounded-lg overflow-hidden'>
             <Image 
             width={504} 
             height={655}
@@ -16,5 +18,6 @@ export default async function PerfumeCards({ search }:{ search: string }) {
                 <p className='text-gray-700'>${perfume.prize}</p>
             </div>
         </div>
+        </Link>
     ));
 }
