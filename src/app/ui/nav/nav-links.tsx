@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import Image from "next/image";
 
 const navLinks = [
     {name: "Shop", href: "/"},
@@ -16,6 +17,7 @@ export default function NavLinks() {
     return (
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
         <a href='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
+        <Image src='/favicon.png' alt='Logo' width={40} height={40} className="border-radius-50" />
           <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>Perfumes</span>
         </a>
         <div className='w-full md:block md:w-auto'>

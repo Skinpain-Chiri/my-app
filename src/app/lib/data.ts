@@ -1,8 +1,8 @@
 import { sql } from "@vercel/postgres";
 import { Perfume } from "./type";
 
-export async function getPerfumes(searchQuery: string) {
-    const result = await sql<Perfume>`SELECT * FROM perfumes WHERE name ILIKE ${`%${searchQuery}%`}`;
+export async function getPerfumes(searchQuery: string = '') {
+    const result = await sql<Perfume>`SELECT * FROM perfumes WHERE name ILIKE ${`%${searchQuery}%`} ORDER BY date DESC`;
     const perfumes = result.rows.map((perfume) => {
         return {
             ...perfume,
